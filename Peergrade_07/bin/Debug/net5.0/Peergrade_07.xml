@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Peergrade_07</name>
+    </assembly>
+    <members>
+        <member name="T:Peergrade_07.Controllers.GeneralController">
+            <summary>
+            Общий контроллер.
+            </summary>
+        </member>
+        <member name="M:Peergrade_07.Controllers.GeneralController.Init">
+            <summary>
+            HttpPost метод для инициализации списков.
+            </summary>
+            <returns> Результат запроса. </returns>
+        </member>
+        <member name="T:Peergrade_07.Controllers.LettersController">
+            <summary>
+            Контроллер сообщений.
+            </summary>
+        </member>
+        <member name="P:Peergrade_07.Controllers.LettersController.Letters">
+            <summary>
+            Список сообщений.
+            </summary>
+        </member>
+        <member name="M:Peergrade_07.Controllers.LettersController.Get">
+            <summary>
+            HttpGet метод для получения полного списка сообщений.
+            </summary>
+            <returns> Полный список сообщений. </returns>
+        </member>
+        <member name="M:Peergrade_07.Controllers.LettersController.Get(System.String,System.String)">
+            <summary>
+            HttpGet метод для получения списка сообщений по отправителю и получателю.
+            </summary>
+            <param name="senderId"> Email отправителя. </param>
+            <param name="receiverId"> Email получателя. </param>
+            <returns> Список сообщений от заданного отправителя к заданному получателю. </returns>
+        </member>
+        <member name="M:Peergrade_07.Controllers.LettersController.GetBySender(System.String)">
+            <summary>
+            HttpGet метод для получения списка сообщений по отправителю.
+            </summary>
+            <param name="senderId"> Email отправителя. </param>
+            <returns> Список сообщений от заданного отправителя. </returns>
+        </member>
+        <member name="M:Peergrade_07.Controllers.LettersController.GetByReceiver(System.String)">
+            <summary>
+            HttpGet метод для получения списка сообщений по получателю.
+            </summary>
+            <param name="receiverId"> Email получателя. </param>
+            <returns> Список сообщений заданному получателю. </returns>
+        </member>
+        <member name="M:Peergrade_07.Controllers.LettersController.Post(System.String,System.String,System.String,System.String)">
+            <summary>
+            HttpPost метод для отправки нового сообщения.
+            </summary>
+            <param name="subject"> Тема сообщения. </param>
+            <param name="senderId"> Email отправителя. </param>
+            <param name="receiverId"> Email получателя. </param>
+            <param name="message"> Текст сообщения. </param>
+            <returns> Результат запроса. </returns>
+        </member>
+        <member name="M:Peergrade_07.Controllers.LettersController.Post">
+            <summary>
+            HttpPost запрос для отправки нового случайно сгенерированного сообщения.
+            </summary>
+            <returns> Результат запроса. </returns>
+        </member>
+        <member name="M:Peergrade_07.Controllers.LettersController.Clear">
+            <summary>
+            HttpDelete метод, который очищает список сообщений.
+            </summary>
+            <returns> Результат запроса. </returns>
+        </member>
+        <member name="T:Peergrade_07.Controllers.UsersController">
+            <summary>
+            Контроллер пользователей.
+            </summary>
+        </member>
+        <member name="P:Peergrade_07.Controllers.UsersController.Users">
+            <summary>
+            Список пользователей.
+            </summary>
+        </member>
+        <member name="M:Peergrade_07.Controllers.UsersController.Get">
+            <summary>
+            HttpGet метод для получения полного списка пользователей.
+            </summary>
+            <returns> Полный список пользователей. </returns>
+        </member>
+        <member name="M:Peergrade_07.Controllers.UsersController.Get(System.Int32,System.Int32)">
+            <summary>
+            HttpGet метод для получения среза списка пользователей.
+            </summary>
+            <param name="limit"> Максимольный размер среза. </param>
+            <param name="offset"> Отступ от начала списка. </param>
+            <returns> Срез списка пользователей. </returns>
+        </member>
+        <member name="M:Peergrade_07.Controllers.UsersController.Get(System.String)">
+            <summary>
+            HttpGet метод для получения информации о пользователе по идентификатору (email).
+            </summary>
+            <param name="email"> Идентификатор пользователя. </param>
+            <returns> Информация о пользователе с данным идентификатором. </returns>
+        </member>
+        <member name="M:Peergrade_07.Controllers.UsersController.Post(System.String,System.String)">
+            <summary>
+            HttpPost метод для регистрации нового пользователя. 
+            </summary>
+            <param name="email"> Email пользователя (идентификатор). </param>
+            <param name="userName"> Имя пользователя. </param>
+            <returns> Результат запроса. </returns>
+        </member>
+        <member name="M:Peergrade_07.Controllers.UsersController.Post">
+            <summary>
+            HttpPost метод для регистрации случайно сгенерированного пользователя. 
+            </summary>
+            <returns> Результат запроса. </returns>
+        </member>
+        <member name="M:Peergrade_07.Controllers.UsersController.Clear">
+            <summary>
+            HttpDelete метод, который очищает список пользователей.
+            </summary>
+            <returns> Результат запроса. </returns>
+        </member>
+        <member name="T:Peergrade_07.Models.Letter">
+            <summary>
+            Класс, описывающий сообщение.
+            </summary>
+        </member>
+        <member name="P:Peergrade_07.Models.Letter.Subject">
+            <summary>
+            Тема сообщения.
+            </summary>
+        </member>
+        <member name="P:Peergrade_07.Models.Letter.Message">
+            <summary>
+            Текст сообщения.
+            </summary>
+        </member>
+        <member name="P:Peergrade_07.Models.Letter.SenderId">
+            <summary>
+            Идентификатор отправителя.
+            </summary>
+        </member>
+        <member name="P:Peergrade_07.Models.Letter.ReceiverId">
+            <summary>
+            Идентификатор получателя.
+            </summary>
+        </member>
+        <member name="M:Peergrade_07.Models.Letter.#ctor">
+            <summary>
+            Пустой конструктор.
+            </summary>
+        </member>
+        <member name="M:Peergrade_07.Models.Letter.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Конструктор сообщения.
+            </summary>
+            <param name="sbj"> Тема. </param>
+            <param name="message"> Текст. </param>
+            <param name="senderId"> Отправитель. </param>
+            <param name="receiverId"> Получатель. </param>
+        </member>
+        <member name="M:Peergrade_07.Models.Letter.GenerateLetter">
+            <summary>
+            Метод, позволяющий случайным образом сгенерировать сообщение.
+            </summary>
+            <returns> Сгенерированное сообщение. </returns>
+        </member>
+        <member name="T:Peergrade_07.Models.User">
+            <summary>
+            Класс, описывающий пользователя.
+            </summary>
+        </member>
+        <member name="P:Peergrade_07.Models.User.Email">
+            <summary>
+            Email пользователя (идентификатор).
+            </summary>
+        </member>
+        <member name="P:Peergrade_07.Models.User.UserName">
+            <summary>
+            Имя пользователя.
+            </summary>
+        </member>
+        <member name="M:Peergrade_07.Models.User.#ctor">
+            <summary>
+            Пустой конструктор.
+            </summary>
+        </member>
+        <member name="M:Peergrade_07.Models.User.#ctor(System.String,System.String)">
+            <summary>
+            Конструктор пользователя.
+            </summary>
+            <param name="email"> Идентифиактор пользователя. </param>
+            <param name="userName"> Имя пользователя. </param>
+        </member>
+        <member name="M:Peergrade_07.Models.User.Equals(System.Object)">
+            <summary>
+            Изменение реализации метода Equals для проверки двух пользователей на равенство.
+            </summary>
+            <param name="obj"> Объект, с которым происходит сравнение. </param>
+            <returns> True, если объекты равны, false - в ином случае. </returns>
+        </member>
+        <member name="M:Peergrade_07.Models.User.GetHashCode">
+            <summary>
+            Изменение рализация метода получения хэш-кода (для корректного сравнения объектов).
+            </summary>
+            <returns> Длина идентификатора. </returns>
+        </member>
+        <member name="M:Peergrade_07.Models.User.GenerateUser">
+            <summary>
+            Метод позволяет случайным образом сгенерировать пользователя.
+            </summary>
+            <returns> Сгенерированный пользователь. </returns>
+        </member>
+        <member name="M:Peergrade_07.Models.User.CompareTo(System.Object)">
+            <summary>
+            Реализация интерфейса IComparable (для корректной сортировки).
+            </summary>
+            <param name="obj"> Объект, с которым происходит сравнение. </param>
+            <returns> Результат сравнения. </returns>
+        </member>
+        <member name="T:Peergrade_07.Serializer">
+            <summary>
+            Статический класс, позволяющий сериализовывать и десериализовывать объекты.
+            </summary>
+        </member>
+        <member name="M:Peergrade_07.Serializer.Serialize``1(System.Collections.Generic.List{``0},System.String)">
+            <summary>
+            Обобщённый метод для сериализации списка обхектов.
+            </summary>
+            <param name="list"> Список объектов. </param>
+            <param name="fileName"> Путь к файлу. </param>
+            <typeparam name="T"> Тип элементов списка. </typeparam>
+            <returns> True, если сериализация прошла успешно, false - в ином случае. </returns>
+        </member>
+        <member name="M:Peergrade_07.Serializer.Deserialize``1(System.String)">
+            <summary>
+            Обобщённый метод для десериализации списка обхектов.
+            </summary>
+            <param name="fileName"> Путь к файлу, хранящему сериализованный объект. </param>
+            <typeparam name="T"> Тип элементов списка. </typeparam>
+            <returns> Список объектов заданного типа. Пустой, если возникло исключение. </returns>
+        </member>
+    </members>
+</doc>
